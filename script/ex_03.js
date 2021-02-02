@@ -1,8 +1,8 @@
 let yourName = () => {
-    let nom = '';
     let footer = document.querySelector('footer div');
     footer.addEventListener('click', () => {
-
+        
+        let nom = '';
         while(nom == '' || nom == null) {
             nom = prompt('Quel est votre nom ?');
         }
