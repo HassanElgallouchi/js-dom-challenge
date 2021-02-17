@@ -1,6 +1,7 @@
 let styleFont = () => {
     let buttons = document.querySelectorAll('footer div button')
     let options = document.querySelectorAll('footer div select ')
+    console.log(options);
     let fontSize = 16;
     let body = document.querySelector('body');
 

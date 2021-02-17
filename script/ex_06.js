@@ -1,4 +1,3 @@
-let footer = document.querySelector('footer div');
 
 function  Hero(name, role, intelligence, force) {
     this.name = name;
@@ -7,13 +6,15 @@ function  Hero(name, role, intelligence, force) {
     this.force = force;
 }
 
+Hero.prototype.toText = function () {
+    return `Je suis\n ${this.name} le ${this.role}, j'ai ${this.intelligence} points d'intelligence et ${this.force} points de force !`
+}
+
 let mage = new Hero("amadeus", "mage", 10, 3);
 let guerrier = new Hero("pontius", "guerrier", 3, 10);
 
-console.log(mage);
-mage.toString();
-guerrier.toString();
+mage.toText();
+guerrier.toText();
 
-console.log(mage);
-footer.textContent = `"Je suis ${mage.name} le ${mage.role}, j'ai ${mage.intelligence} points d'intelligence et ${mage.force} points de force ! \
-Je suis ${guerrier.name} le ${guerrier.role}, j'ai ${guerrier.intelligence} points d'intelligence et ${guerrier.force} points de force !"`;
+let footer = document.querySelector('footer div');
+footer.textContent = `${mage.toText()} ${guerrier.toText()}`;

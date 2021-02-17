@@ -38,3 +38,35 @@ if (document.cookie == false) {
         })
     }
 }
+
+
+
+
+
+
+
+
+
+
+// test cookies
+document.cookie = "name=james";
+document.cookie = "table=eggs";
+let token = document.cookie.split(';');
+console.log(token);
+
+
+let tot = token.map(cookie => cookie.split('='))
+
+console.log(tot);
+// console.log(token);
+
+let rdc = tot.reduce((acc, [key, value]) => ({ ...acc, [key.trim()]: decodeURIComponent(value) }), {})
+
+console.log(rdc);
+console.log(rdc.name);
+
+
+let pst = document.cookie.split(';').map(cookie => cookie.split('=')).reduce((acc, [key, value]) => ({ ...acc, [key.trim()]: decodeURIComponent(value) }), {});
+
+console.log(pst);
+console.log(pst.valeur);
